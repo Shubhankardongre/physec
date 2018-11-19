@@ -1,0 +1,11 @@
+<!--Custom legend template-->
+<div class="legend-data">
+  <div class="legend-wrapper" *ngFor="let legendLabel of legendData;index as i">
+      <label class="container-legend" (click)="legendClick(legendLabel.key)"><span>{{legendLabel.key}} ({{legendLabel.y}})</span>
+          <input type="radio"  name="radio">
+          <span class="checkmark"  [ngStyle]="{'border-color': legendColors[i]}"><span class="checkmark-inner-circle" [ngStyle]="{'background': legendColors[i]}"></span></span>
+        </label>
+        <button *ngIf = "selectedLegLabel == legendLabel.key"  class="btn btn-sm btn-link btn-clear " (click)="clearClick()"> <clr-icon shape="redo"></clr-icon>{{clearText}} </button>
+  </div>
+</div>
+

@@ -1,0 +1,125 @@
+<div class="custom-header">
+  <div class="search-bar-container">
+    <div class="search-bar">
+      <clr-icon shape="search" size="18" class="is-inverse search-icon"></clr-icon>
+      <input type="text">
+    </div>
+    <div class="header-btn-wrapper">
+      <div class="header-btn"></div>
+    </div>
+    <div class="header-btn-wrapper">
+      <div class="header-btn">
+        <clr-icon shape="details" size="22" class="header-btn-icon is-inverse"></clr-icon>
+      </div>
+    </div>
+    <div class="header-btn-wrapper">
+      <div class="header-btn">
+        <clr-icon shape="bell" size="22" class="header-btn-icon is-inverse"></clr-icon>
+      </div>
+    </div>
+  </div>
+  <h1 class="header-text">Welcome, Abhishek Joshi</h1>
+</div>
+<div class="main-container">
+  <div class="dashboard-overview clr-row">
+    <div class="clr-col-3">
+      <div class="card overview-card">
+        <div class="card-block">
+          <div class="card-value">10</div>
+          <div class="card-data-1" title="Open Incidents">Open Incidents</div>
+          <div class="Line-3"></div>
+          <div class="card-data-2">6 Offices</div>
+        </div>
+      </div>
+    </div>
+    <div class="clr-col-3">
+      <div class="card overview-card">
+        <div class="card-block">
+          <div class="card-value">21</div>
+          <div class="card-data-1" title="Resource Shortage">Resource Shortage</div>
+          <div class="Line-3"></div>
+          <div class="card-data-2">4 Offices</div>
+        </div>
+      </div>
+    </div>
+    <div class="clr-col-3">
+      <div class="card overview-card">
+        <div class="card-block">
+          <div class="card-value">12</div>
+          <div class="card-data-1" title="Staff Compliance Tasks">Staff Compliance Tasks</div>
+          <div class="Line-3"></div>
+          <div class="card-data-2">6 Offices</div>
+        </div>
+      </div>
+    </div>
+    <div class="clr-col-3">
+      <div class="card overview-card">
+        <div class="card-block">
+          <div class="card-value">7</div>
+          <div class="card-data-1" title="News Feed">News Feed</div>
+          <div class="Line-3"></div>
+          <div class="card-data-2">2 Offices</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-container" *ngIf="incidentsData">
+    <div class="table-header">
+      <h2>Open Incidents ({{incidentsData.totalIncidents}})</h2>
+      <div class="dropdown">
+        <clr-dropdown>
+          <button type="button" class="btn btn-outline-primary dropdown-btn" clrDropdownTrigger>
+            Filter By Time Period
+            <clr-icon shape="caret down"></clr-icon>
+          </button>
+          <clr-dropdown-menu clrPosition="bottom-left" *clrIfOpen>
+            <button type="button" clrDropdownItem>All Time</button>
+            <button type="button" clrDropdownItem>Today</button>
+            <button type="button" clrDropdownItem>This Week</button>
+            <button type="button" clrDropdownItem>This Month</button>
+          </clr-dropdown-menu>
+        </clr-dropdown>
+      </div>
+
+      <div class="tabs" *ngIf="regionList.length">
+        <clr-tabs>
+          <clr-tab *ngFor="let region of regionList">
+            <button clrTabLink id="link1">{{region}} ({{incidentsData.incidentsRegionWise[region]}})</button>
+          </clr-tab>
+        </clr-tabs>
+      </div>
+
+    </div>
+    <div class="table-body">
+      <div class="donut-chart-container">
+        <app-donut-chart [chartTitle]="{title:'Open Incidents', count:incidentsData.totalIncidents}" [incidentTypeList]="incidentTypeList" (legendClickCallBack)="legendClick($event)" (clearClickCallBack)="clearFunction()"></app-donut-chart>
+      </div>
+      <div class="table-data">
+        <clr-datagrid>
+          <clr-dg-column>Incident Type</clr-dg-column>
+          <clr-dg-column>Date</clr-dg-column>
+          <clr-dg-column [clrDgField]="'type'">Office Location</clr-dg-column>
+          <clr-dg-column>Region</clr-dg-column>
+          <clr-dg-column>Status</clr-dg-column>
+
+          <clr-dg-row *clrDgItems="let incident of incidentsData.data">
+            <clr-dg-cell>{{incident.type}}</clr-dg-cell>
+            <clr-dg-cell>{{incident.date}}</clr-dg-cell>
+            <clr-dg-cell>{{incident.officeLocation}}</clr-dg-cell>
+            <clr-dg-cell>{{incident.region}}</clr-dg-cell>
+            <clr-dg-cell>{{incident.status}}</clr-dg-cell>
+          </clr-dg-row>
+
+          <clr-dg-footer>
+            <clr-dg-pagination #pagination [clrDgPageSize]="10" [clrDgTotalItems]="incidentsData.data.length">
+              {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+              of {{pagination.totalItems}} Incidents
+            </clr-dg-pagination>
+          </clr-dg-footer>
+        </clr-datagrid>
+      </div>
+    </div>
+
+  </div>
+
+</div>

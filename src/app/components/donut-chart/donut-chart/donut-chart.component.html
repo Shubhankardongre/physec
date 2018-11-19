@@ -1,0 +1,7 @@
+<div id="incidentdata" *ngIf="incidentTypeList">
+  <nvd3 [options]="options" [data]="incidentTypeList"></nvd3>
+</div>
+<div>
+  <app-custom-legend [clearText]="clearText" [legendData]="incidentTypeList" (legendClickCallBack)="legendClick($event)"
+    (clearClickCallBack)="clearFunction()"> </app-custom-legend>
+</div>

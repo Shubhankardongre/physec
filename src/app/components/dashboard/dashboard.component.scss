@@ -1,0 +1,145 @@
+.custom-header{
+    margin-left: 265px;
+    height: 243px;
+    background-color: #002538;
+    padding: 35px 25px 0px 25px;
+    .search-bar-container{
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        .search-bar{
+            height: 42px;
+            border-radius: 21px;
+            border: solid 1px rgba(255, 255, 255, 0.8);
+            padding: 7px 28px;
+            -webkit-flex: 1;  /* Safari 6.1+ */
+            -ms-flex: 1;  /* IE 10 */    
+            flex: 1;
+            margin-right: 73px;
+            display: flex;
+            .search-icon{
+                -webkit-flex-basis: 20px;  /* Safari 6.1+ */
+                -ms-flex-basis: 20px;  /* IE 10 */    
+                flex-basis: 20px;
+            }
+        }
+        .header-btn-wrapper{
+            -webkit-flex-basis: 69px;  /* Safari 6.1+ */
+            -ms-flex-basis: 69px;  /* IE 10 */    
+            flex-basis: 69px;
+            padding-left: 27px;
+            .header-btn{
+                cursor: pointer;
+                height: 42px;
+                width: 42px;
+                border-radius: 21px;
+                border: solid 1px #ffffff;
+                .header-btn-icon{
+                    margin: 9px 9px;
+                }
+            }
+        }
+    }
+    .header-text{
+        margin-top: 27px;
+        font-size: 32px;
+        font-weight: 500;
+        color: #eeeeee;
+    }
+}
+.main-container{
+    margin-left: 265px;
+    padding: 37px 25px 0px 25px;
+    background-color: #f1f1f1;
+    .dashboard-overview{
+        margin-top: -125px;
+        margin-bottom: 30px;
+        min-height: 170px;
+        .overview-card{
+            border-left: 5px solid #0079b8;
+            cursor: pointer;
+            .card-value{
+                font-size: 40px;
+                font-weight: 500;
+                color: #0079b8;
+                line-height: 50px;
+                text-align: center;
+            }
+            .card-data-1{
+                font-size: 18px;
+                font-weight: 500;
+                color: #565656;
+                text-align: center;
+                max-width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .Line-3 {
+                width: 180px;
+                height: 1px;
+                border-style: solid;
+                border-width: 1px;
+                border-image-source: linear-gradient(to left, rgba(255, 255, 255, 0), #565656 50%, rgba(255, 255, 255, 0));
+                border-image-slice: 1;
+                margin: 9px auto 6px auto;
+            }
+            .card-data-2{
+                font-size: 15px;
+                text-align: center;
+                color: #565656;
+            }
+        }
+        
+    }   
+    .table-container{
+        background-color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 3px 0 0 #d7d7d7;
+        .table-header{
+            height: 102px;
+            border-bottom: solid 1px #dddddd;
+            padding: 16px 24px 0px 24px;
+            h2{
+                margin: -10px 0px 12px 0px;
+                font-size: 24px;
+                font-weight: 500;
+                color: #737373;
+                float: left;
+            }
+            .dropdown{
+                margin: 0px 0px 0px 0px;
+                float: right;
+                .dropdown-btn{
+                    border-radius: 3px;
+                    border: solid 1px #cccccc;
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: #565656;
+                }
+            }
+            .tabs{
+                button{
+                    font-size: 14px;
+                    color: #4c4c4c;
+                } 
+            }
+        }
+        .table-body{
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            .donut-chart-container{
+                -webkit-flex: 0.32;  /* Safari 6.1+ */
+                -ms-flex: 0.32;  /* IE 10 */    
+                flex: 0.32;
+                width: 255px;
+                height: auto;
+                border-right: solid 1px #dddddd;
+            }
+            .table-data{
+                -webkit-flex: 1;  /* Safari 6.1+ */
+                -ms-flex: 1;  /* IE 10 */    
+                flex: 1;
+            }
+        }
+    }
+}
