@@ -14,4 +14,8 @@ export class IncidentsService {
   getIncidents() {
     return this._http.get<any>(this.endpoints.getIncidents);
   }
+
+  getFilteredIncidents() {
+    return this._http.get<any>(this.endpoints.getFilteredIncidents);
+  }
 }

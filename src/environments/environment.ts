@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   endpoints: {
-    "getIncidents": "/assets/api/incidents.json"
+    "getIncidents": "/assets/api/incidents.json",
+    "getFilteredIncidents": "/assets/api/incidents-filtered.json"
   },
   incConstants: {
     CLEAR: "clear",
@@ -14,7 +15,7 @@ export const environment = {
       "TYPE": "pieChart",
       "HEIGHT": 200,
       "DONUT": true,
-      "DONMUTRATIO": 0.6,
+      "DONMUTRATIO": 0.7,
       "LABELTHRESHHOLD": 0.01,
       "LABELSUNBEAMLAYOUT": true,
       "GROWONHOVER": true,

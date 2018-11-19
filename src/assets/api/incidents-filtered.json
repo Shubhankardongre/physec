@@ -26,22 +26,6 @@
             "status": "open"
         },
         {
-            "type": "Missing",
-            "date": "12 oct",
-            "officeLocation": "Kalyani Vista, Bengaluru",
-            "region": "India",
-            "priority": "High",
-            "status": "open"
-        },
-        {
-            "type": "Missing",
-            "date": "12 oct",
-            "officeLocation": "Kalyani Vista, Bengaluru",
-            "region": "India",
-            "priority": "High",
-            "status": "closed"
-        },
-        {
             "type": "Medical",
             "date": "12 oct",
             "officeLocation": "Kalyani Magnum, Bengaluru",
@@ -58,22 +42,6 @@
             "status": "open"
         },
         {
-            "type": "missing",
-            "date": "12 oct",
-            "officeLocation": "Kalyani Vista, Bengaluru",
-            "region": "India",
-            "priority": "High",
-            "status": "open"
-        },
-        {
-            "type": "Medical",
-            "date": "15 oct",
-            "officeLocation": "Kalyani Vista, Bengaluru",
-            "region": "India",
-            "priority": "low",
-            "status": "open"
-        },
-        {
             "type": "Medical",
             "date": "12 oct",
             "officeLocation": "Kalyani Vista, Bengaluru",
@@ -84,14 +52,6 @@
         {
             "type": "Medical",
             "date": "15 oct",
-            "officeLocation": "Kalyani Vista, Bengaluru",
-            "region": "India",
-            "priority": "High",
-            "status": "open"
-        },
-        {
-            "type": "Medical",
-            "date": "12 oct",
             "officeLocation": "Kalyani Vista, Bengaluru",
             "region": "India",
             "priority": "High",

@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
+import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
 
 declare let d3: any;
 
 @Component({
   selector: 'app-donut-chart',
   templateUrl: './donut-chart.component.html',
-  styleUrls: ['./donut-chart.component.scss', '../../../../../node_modules/nvd3/build/nv.d3.css']
+  styleUrls: ['./donut-chart.component.scss']
 })
 export class DonutChartComponent implements OnInit {
 
