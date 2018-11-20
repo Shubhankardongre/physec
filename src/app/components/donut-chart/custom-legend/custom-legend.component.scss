@@ -8,14 +8,19 @@
     display: table;
     margin: 0 auto;
     .legend-wrapper {
-      width: 300px;
+      width: 100%;
       .container-legend {
         display: inline-block;
         position: relative;
         padding-left: 35px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #737373;
         @include selecttext(none);
         /* Hide the browser's default radio button */
         input {
@@ -43,8 +48,8 @@
         }
       }
       .btn-clear {
-        margin-left: 25px;
+        position: absolute;
+        margin:0;
       }
     }
   }
-  

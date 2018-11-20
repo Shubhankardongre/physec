@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
 
@@ -7,7 +7,8 @@ declare let d3: any;
 @Component({
   selector: 'app-donut-chart',
   templateUrl: './donut-chart.component.html',
-  styleUrls: ['./donut-chart.component.scss']
+  styleUrls: ['./donut-chart.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DonutChartComponent implements OnInit {
 
@@ -37,6 +38,7 @@ export class DonutChartComponent implements OnInit {
       chart: {
         type: environment.incConstants.CHARTPROPERTIES.TYPE,
         height: environment.incConstants.CHARTPROPERTIES.HEIGHT,
+        margin : {top:35, left:0, bottom: 0,right: 0},
         color: this.legendColors,
         x: function (d) { return d.key; },
         y: function (d) { return d.y; },
@@ -66,19 +68,12 @@ export class DonutChartComponent implements OnInit {
               .attr("class", "nv-pie-title noofinc incEle")
               .attr("text-anchor", "middle")
               .attr("dy", "-.55em")
-              .style("fill", "#000")
-              .style("font-size", "30px")
-              .style("font-weight", "500")
-              .style("color", "#737373");
             // Insert second line of text into middle of donut pie chart
             initSlice.insert("text", "g")
               .text(chartTitle.title)
               .attr("class", "nv-pie-title incDesc incEle")
               .attr("text-anchor", "middle")
               .attr("dy", ".85em")
-              .style("fill", "#000")
-              .style("font-size", "14px")
-              .style("color", "#777777");
           }
         }
       }
